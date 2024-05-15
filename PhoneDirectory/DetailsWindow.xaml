@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhoneDirectory"
         mc:Ignorable="d"
-        Title="Телефонный справочник" Height="289" Width="803">
+        Title="Телефонный справочник" Height="289" Width="803" ResizeMode="NoResize">
     <Grid>
         <DataGrid x:Name="dgDetal" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="75,82,66,102"/>
         <Label Content="Дополнительная информация" HorizontalAlignment="Center" FontSize="20"  Margin="0,37,0,0" VerticalAlignment="Top" FontWeight="Bold"/>

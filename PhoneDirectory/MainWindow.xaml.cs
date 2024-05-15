@@ -27,19 +27,21 @@ namespace PhoneDirectory
 		{
 			InitializeComponent();
 		}
-
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
-			using (var db = new PhoneDirectoryEntities())
+			try
 			{
-				cbGroup.ItemsSource= db.contact_group.ToList();
-				cbGroup.DisplayMemberPath = "name";
-			}
+				using (var db = new PhoneDirectoryEntities())
+				{
+					cbGroup.ItemsSource= db.contact_group.ToList();
+					cbGroup.DisplayMemberPath = "name";
+				}
+			} 
+			catch { MessageBox.Show("Отшибка!"); }
 			Text();
 		}
 		private void Text()
 		{
-			var row = dgCont;
 			try
 			{
 				using (var db = new PhoneDirectoryEntities())
@@ -58,7 +60,7 @@ namespace PhoneDirectory
 					dgCont.ItemsSource = query.ToList();
 				}
 			}
-			catch { MessageBox.Show("Отшибка!"); }
+			catch { MessageBox.Show("Ошибка!"); }
 		}
 		private void btAdd_Click(object sender, RoutedEventArgs e)
 		{
@@ -68,11 +70,9 @@ namespace PhoneDirectory
 		private void btDel_Click(object sender, RoutedEventArgs e)
 		{
 			var selectedItem = dgCont.SelectedItem;
-
 			if (selectedItem != null)
 			{
 				var id = (int)selectedItem.GetType().GetProperty("Id").GetValue(selectedItem);
-
 				try
 				{
 					using (var db = new PhoneDirectoryEntities())
@@ -111,24 +111,20 @@ namespace PhoneDirectory
 					dgCont.ItemsSource = query.ToList();
 				}
 			}
-			catch { MessageBox.Show("Отшибка!"); }
+			catch { MessageBox.Show("Ошибка!"); }
 		}
 		private void btSave_Click(object sender, RoutedEventArgs e)
 		{
 			SaveFileDialog saveFileDialog = new SaveFileDialog();
 			saveFileDialog.FileName = "ExportData";
 			saveFileDialog.Filter = "ExportData (*.csv)|*.csv";
-
 			if (saveFileDialog.ShowDialog() == true)
 			{
-
 				var csvLines = new List<string>();
-
 				foreach (var column in dgCont.Columns)
 				{
 					csvLines.Add(column.Header.ToString());
 				}
-
 				foreach (var item in dgCont.Items)
 				{
 					var line = "";
@@ -146,33 +142,34 @@ namespace PhoneDirectory
 
 					csvLines.Add(line);
 				}
-
 				File.WriteAllLines(saveFileDialog.FileName, csvLines);
-
 				MessageBox.Show("Данные успешно экспортированы в файл " + saveFileDialog.FileName);
 			}
 		}
 		private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			var searchText = txtSearch.Text;
-
-			using (var db = new PhoneDirectoryEntities())
+			try
 			{
-				var query = from con in db.contact
-							join gro in db.contact_group on con.contact_group equals gro.id
-							join p in db.position on con.position equals p.id
-							join com in db.company on con.company equals com.id
-							where con.lastname.Contains(searchText) || con.name.Contains(searchText) || con.surname.Contains(searchText)
-							select new
-							{
-								Фамилия = con.lastname,
-								Имя = con.name,
-								Отчество = con.surname,
-								Телефон = con.phone,
-								Группа = gro.name,
-							};
-				dgCont.ItemsSource = query.ToList();
+				using (var db = new PhoneDirectoryEntities())
+				{
+					var query = from con in db.contact
+								join gro in db.contact_group on con.contact_group equals gro.id
+								join p in db.position on con.position equals p.id
+								join com in db.company on con.company equals com.id
+								where con.lastname.Contains(searchText) || con.name.Contains(searchText) || con.surname.Contains(searchText)
+								select new
+								{
+									Фамилия = con.lastname,
+									Имя = con.name,
+									Отчество = con.surname,
+									Телефон = con.phone,
+									Группа = gro.name,
+								};
+					dgCont.ItemsSource = query.ToList();
+				}
 			}
+			catch { MessageBox.Show("Ошибка!"); }		
 		}
 		private void btDetal_Click(object sender, RoutedEventArgs e)
 		{

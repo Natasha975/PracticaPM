@@ -23,25 +23,32 @@ namespace PhoneDirectory
 		public DetailsWindow(int id)
 		{
 			InitializeComponent();
-			using (var db = new PhoneDirectoryEntities())
+			try
 			{
-				var query = from con in db.contact
-							join gro in db.contact_group on con.contact_group equals gro.id
-							join p in db.position on con.position equals p.id
-							join com in db.company on con.company equals com.id
-							where con.id == id
-							select new
-							{
-								Фамилия = con.lastname,
-								Имя = con.name,
-								Отчество = con.surname,
-								Телефон = con.phone,
-								Email = con.e_mail,
-								Компания = com.name,
-								Позиция = p.name,
-								Группа = gro.name,
-							};
-				dgDetal.ItemsSource = query.ToList();
+				using (var db = new PhoneDirectoryEntities())
+				{
+					var query = from con in db.contact
+								join gro in db.contact_group on con.contact_group equals gro.id
+								join p in db.position on con.position equals p.id
+								join com in db.company on con.company equals com.id
+								where con.id == id
+								select new
+								{
+									Фамилия = con.lastname,
+									Имя = con.name,
+									Отчество = con.surname,
+									Телефон = con.phone,
+									Email = con.e_mail,
+									Компания = com.name,
+									Позиция = p.name,
+									Группа = gro.name,
+								};
+					dgDetal.ItemsSource = query.ToList();
+				}
+			}
+			catch
+			{
+				MessageBox.Show("Ошибка!");
 			}
 		}
 	}
