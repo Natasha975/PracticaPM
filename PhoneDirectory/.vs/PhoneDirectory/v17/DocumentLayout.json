@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|c:\\users\\\u043D\u0430\u0442\u0430\u043B\u044C\u044F\\desktop\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u043F\u043C.02\\phonedirectory\\addwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|solutionrelative:addwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|c:\\users\\\u043D\u0430\u0442\u0430\u043B\u044C\u044F\\desktop\\\u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u043F\u043C.02\\phonedirectory\\addwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{837689E5-C29C-431A-9388-92E6BD96825A}|PhoneDirectory.csproj|solutionrelative:addwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\AddWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AddWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\AddWindow.xaml.cs",
+              "RelativeToolTip": "AddWindow.xaml.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T06:30:57.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\AddWindow.xaml",
+              "RelativeDocumentMoniker": "AddWindow.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\AddWindow.xaml",
+              "RelativeToolTip": "AddWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:36:27.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-15T05:17:48.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u041D\u0430\u0442\u0430\u043B\u044C\u044F\\Desktop\\\u041F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 \u041F\u041C.02\\PhoneDirectory\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAAALgAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:17:46.174Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 984,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d63989b96b6841a9b9acc6a787b4c3c4" Name="Diagram1">
+        <EntityTypeShape EntityType="PhoneDirectoryModel.company" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoneDirectoryModel.contact" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoneDirectoryModel.contact_group" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoneDirectoryModel.position" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoneDirectoryModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="PhoneDirectoryModel.FK_contact_company" ManuallyRouted="false" />
+        <AssociationConnector Association="PhoneDirectoryModel.FK_contact_contact_group" ManuallyRouted="false" />
+        <AssociationConnector Association="PhoneDirectoryModel.FK_contact_position" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

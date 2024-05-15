@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhoneDirectoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="contact" Relationship="Self.FK_contact_company" FromRole="company" ToRole="contact" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="e_mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="Int32" />
+    <Property Name="position" Type="Int32" />
+    <Property Name="contact_group" Type="Int32" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="photo" Type="Binary" MaxLength="100" FixedLength="false" />
+    <NavigationProperty Name="company1" Relationship="Self.FK_contact_company" FromRole="contact" ToRole="company" />
+    <NavigationProperty Name="contact_group1" Relationship="Self.FK_contact_contact_group" FromRole="contact" ToRole="contact_group" />
+    <NavigationProperty Name="position1" Relationship="Self.FK_contact_position" FromRole="contact" ToRole="position" />
+  </EntityType>
+  <EntityType Name="contact_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="contact" Relationship="Self.FK_contact_contact_group" FromRole="contact_group" ToRole="contact" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="contact" Relationship="Self.FK_contact_position" FromRole="position" ToRole="contact" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_contact_company">
+    <End Role="company" Type="Self.company" Multiplicity="0..1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contact_contact_group">
+    <End Role="contact_group" Type="Self.contact_group" Multiplicity="0..1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contact_group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="contact_group" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contact_position">
+    <End Role="position" Type="Self.position" Multiplicity="0..1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="position">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhoneDirectoryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="company" EntityType="Self.company" />
+    <EntitySet Name="contact" EntityType="Self.contact" />
+    <EntitySet Name="contact_group" EntityType="Self.contact_group" />
+    <EntitySet Name="position" EntityType="Self.position" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_contact_company" Association="Self.FK_contact_company">
+      <End Role="company" EntitySet="company" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contact_contact_group" Association="Self.FK_contact_contact_group">
+      <End Role="contact_group" EntitySet="contact_group" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contact_position" Association="Self.FK_contact_position">
+      <End Role="position" EntitySet="position" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
